@@ -87,7 +87,7 @@ submit.addEventListener("click", async () => {
   if (!answer) return
 
   try {
-    const res = await fetch("/.netlify/functions/checkAnswer", {
+    const res = await fetch("/.netlify/functions/checkAnswers", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -99,7 +99,6 @@ submit.addEventListener("click", async () => {
     const data = await res.json()
 
     const correct = data.success
-
 
     if (correct) {
       setTimeout(() => {
