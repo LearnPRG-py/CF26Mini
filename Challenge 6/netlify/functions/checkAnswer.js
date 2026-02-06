@@ -5,7 +5,7 @@ export async function handler(event, context) {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        url: "jazzy-marshmallow-30ac8f.netlify.app",
+        url: "https://jazzy-marshmallow-30ac8f.netlify.app",
       }),
     };
   } else {
