@@ -20,4 +20,19 @@ function submitValue() {
     nextBtn.style.display = "none";
     return;
   }
+
+  if (numeric === expected) {
+    status.textContent = "Correct!";
+    congrats.style.display = "block";
+    nextBtn.style.display = "inline-block";
+    return;
+  }
+
+  status.textContent = "Nope. Try again.";
+  congrats.style.display = "none";
+  nextBtn.style.display = "none";
+}
+
+function goNext() {
+  window.location.href = "../.netlify/functions/checkAnswer";
 }
