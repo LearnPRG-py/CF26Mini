@@ -1,15 +1,15 @@
-const input = document.getElementById("codeInput")
-input.placeholder = "Type here..."
+const input = document.getElementById("codeInput");
+input.placeholder = "Type here...";
 
 const challenges = [
-`x = 2 * 4 - 3
+  `x = 2 * 4 - 3
 
 if (x > 3) and not (x < 0):
     print("o" + "w")
 else:
     print("no")`,
 
-`codes = {
+  `codes = {
     "langs": {
         "py": "or",
         "js": "no"
@@ -19,13 +19,13 @@ else:
 key = "p" + "y"
 print(codes["langs"].get(key, "error"))`,
 
-`def mystery():
+  `def mystery():
     part = "world"
     return part[-2:]
 
 print(mystery())`,
 
-`result = ""
+  `result = ""
 
 for i, c in enumerate(["l", "x", "l"]):
     if i != 1:
@@ -33,58 +33,58 @@ for i, c in enumerate(["l", "x", "l"]):
 
 print(result)`,
 
-`word = "theory"
+  `word = "theory"
 
 start = len(word) - 5
 end = start + 2
 
-print(word[start:end])`
-]
+print(word[start:end])`,
+];
 
 const texts = [
   "Welcome to the Realm of Secrets...",
   "Each set of code will have a missing keyword...",
-  "Make sure to write the answers down..."
-]
+  "Make sure to write the answers down...",
+];
 
-const intro = document.getElementById("intro")
-const submit = document.getElementById("submit")
+const intro = document.getElementById("intro");
+const submit = document.getElementById("submit");
 
-let introIndex = 0
-let currentChallenge = 0
+let introIndex = 0;
+let currentChallenge = 0;
 
 function playIntro() {
-  intro.textContent = texts[introIndex]
-  intro.classList.remove("animate")
-  void intro.offsetHeight
-  intro.classList.add("animate")
+  intro.textContent = texts[introIndex];
+  intro.classList.remove("animate");
+  void intro.offsetHeight;
+  intro.classList.add("animate");
 }
 
 intro.addEventListener("animationend", () => {
-  introIndex++
+  introIndex++;
   if (introIndex < texts.length) {
-    playIntro()
+    playIntro();
   } else {
-    showChallenge(0)
+    showChallenge(0);
   }
-})
+});
 
-playIntro()
+playIntro();
 
 function showChallenge(n) {
-  intro.className = "challenge"
-  intro.textContent = challenges[n] + "\n\n# enter the output above"
-  input.hidden = false
+  intro.className = "challenge";
+  intro.textContent = challenges[n] + "\n\n# enter the output above";
+  input.hidden = false;
   if (!input.classList.contains("ready")) {
-    input.classList.add("reveal", "ready")
-    submit.classList.add("show")
+    input.classList.add("reveal", "ready");
+    submit.classList.add("show");
   }
 }
 
 submit.addEventListener("click", async () => {
-  const answer = input.value.trim()
-  input.value = ""
-  if (!answer) return
+  const answer = input.value.trim();
+  input.value = "";
+  if (!answer) return;
 
   try {
     const res = await fetch("/.netlify/functions/checkAnswers", {
@@ -92,32 +92,34 @@ submit.addEventListener("click", async () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         challenge: currentChallenge,
-        answer: answer
-      })
-    })
+        answer: answer,
+      }),
+    });
 
-    const data = await res.json()
+    const data = await res.json();
 
-    const correct = data.success
+    const correct = data.success;
 
     if (correct) {
       setTimeout(() => {
-        currentChallenge++
+        currentChallenge++;
 
         if (currentChallenge < challenges.length) {
-          showChallenge(currentChallenge)
+          showChallenge(currentChallenge);
         } else {
-          document.body.classList.add("access")
-          intro.textContent = "ACCESS CODE"
-          input.placeholder = "Enter access code... Hint: Its an anagram"
+          document.body.classList.add("access");
+          intro.textContent = "ACCESS CODE";
+          input.placeholder = "Hint: It's a anagram...";
         }
-      }, 700)
+        if (currentChallenge >= 6) {
+          window.location.href = "https://hilarious-taiyaki-c278ae.netlify.app";
+        }
+      }, 700);
     } else {
-      input.classList.add("shake")
-      setTimeout(() => input.classList.remove("shake"), 400)
+      input.classList.add("shake");
+      setTimeout(() => input.classList.remove("shake"), 400);
     }
-
   } catch (err) {
-    console.error("Server error:", err)
+    console.error("Server error:", err);
   }
-})
+});
