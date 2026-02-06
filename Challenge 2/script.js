@@ -14,7 +14,7 @@ async function submitValue() {
   }
 
   try {
-    const res = await fetch("/.netlify/functions/check-answer", {
+    const res = await fetch("/.netlify/functions/checkAnswer", {
       method: "POST",
       body: JSON.stringify({ value: val })
     });
