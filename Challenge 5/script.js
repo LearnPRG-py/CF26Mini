@@ -109,7 +109,7 @@ submit.addEventListener("click", async () => {
         } else {
           document.body.classList.add("access");
           intro.textContent = "ACCESS CODE";
-          input.placeholder = "Enter access code...";
+          input.placeholder = "Hint: It's a anagram...";
         }
         if (currentChallenge >= 6) {
           window.location.href = "https://hilarious-taiyaki-c278ae.netlify.app";
