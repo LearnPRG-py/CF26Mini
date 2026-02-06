@@ -1,8 +1,12 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<pre>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge 7</title>
+  </head>
+  <body>
+    <pre>
 1   def rotate_clockwise(arr):
 2       if len(arr) != 9:
 3           raise ValueError("Array must have exactly 9 elements")
@@ -24,21 +28,30 @@
 19      arr[3] = bottom
 20      return arr
 </pre>
+    <h3>
+      Yo can u find where the bug is, lmk the line number plz, if there are
+      multiple lmk where the first bug is: thanks!
+    </h3>
+    <input id="lineInput" type="text" placeholder="Enter line number" />
+    <button onclick="check()">Submit</button>
 
-<h3>Yo can u find where the bug is, lmk the line number plz, if there are multiple lmk where the first bug is: thanks!</h3>
-<input id="lineInput" type="text" placeholder="Enter line number">
-<button onclick="check()">Submit</button>
+    <script>
+      async function check() {
+        const answer = document.getElementById("lineInput").value;
 
-<script>
-function check() {
-  const answer = document.getElementById("lineInput").value.trim();
-  if (answer === "12") {
-    window.location.href = "https://github.com/LearnPRG-py/EpikCodefestIdeaz";
-  } else {
-    alert("Incorrect line number.");
-  }
-}
-</script>
+        const response = await fetch("/.netlify/functions/checkAnswer", {
+          method: "POST",
+          body: JSON.stringify({ answer }),
+        });
 
-</body>
+        const result = await response.json();
+
+        if (result.success) {
+          window.location.href = result.url;
+        } else {
+          alert(result.message);
+        }
+      }
+    </script>
+  </body>
 </html>

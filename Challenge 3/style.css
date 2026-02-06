@@ -1,0 +1,227 @@
+#mayDrive div1 {
+  color: hotpink;
+}
+#mayDrive div2 {
+  background-color: lime;
+  border-radius: 12px;
+}
+#mayDrive div3 {
+  transform: rotate(15deg) scale(1.2);
+  text-shadow: 1px 1px black;
+}
+#mayDrive div4 {
+  clip-path: circle(50%);
+}
+#mayDrive div5 {
+  filter: blur(2px) contrast(150%);
+}
+#mayDrive div6 {
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+#mayDrive div7 {
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+}
+#mayDrive div8 {
+  border: 3px dashed orange;
+  padding: 10px;
+  margin: 5px;
+}
+#mayDrive div9 {
+  backdrop-filter: brightness(120%) hue-rotate(180deg);
+}
+#mayDrive div10 {
+  float: inline-start;
+  float-offset: 20px 10px;
+}
+#mayDrive div11 {
+  isolation: isolate;
+  mix-blend-mode: difference;
+}
+#mayDrive div12 {
+  scroll-snap-align: end;
+  scroll-padding: 50px;
+}
+#mayDrive div13 {
+  text-shadow:
+    2px 2px crimson,
+    -2px -2px lime;
+}
+#mayDrive div14 {
+  outline: 5px dotted cyan;
+  outline-offset: 12px;
+}
+#mayDrive div15 {
+  mask-image: linear-gradient(to right, black 50%, transparent 50%);
+}
+#mayDrive div16 {
+  contain: layout paint;
+}
+#mayDrive div17 {
+  object-fit: cover;
+  object-position: 50% 80%;
+}
+#mayDrive div18 {
+  font-variant-caps: all-small-caps;
+  text-decoration-thickness: 6px;
+}
+#mayDrive div19 {
+  filter: invert(70%) sepia(60%) saturate(200%);
+}
+#mayDrive div20 {
+  border-image-source: repeating-conic-gradient(red, yellow 15deg);
+  border-image-slice: 15;
+}
+#mayDrive div21 {
+  transform: translate3d(50px, 20px, 30px) rotateX(45deg);
+}
+#mayDrive div22 {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+#mayDrive div23 {
+  accent-color: magenta;
+}
+#mayDrive div24 {
+  background-image: radial-gradient(circle, pink, purple);
+}
+#mayDrive div25 {
+  text-decoration-style: wavy;
+  text-decoration-color: lime;
+}
+#mayDrive div26 {
+  clip: rect(10px, 120px, 80px, 0);
+}
+#mayDrive div27 {
+  perspective-origin: right bottom;
+  perspective: 2000px;
+}
+#mayDrive div28 {
+  transform: scaleX(-1) rotate(-10deg);
+}
+#mayDrive div29 {
+  filter: blur(4px) brightness(1.2) contrast(130%);
+}
+
+#mayDrive {
+  clip-path: polygon(10% 20%, 80% 0%, 90% 100%, 0% 80%);
+  backdrop-filter: hue-rotate(270deg) blur(12px) brightness(1.5);
+  mix-blend-mode: difference;
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, transparent 51%);
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  scroll-padding: 100px 50px;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  isolation: isolate;
+  will-change: transform, filter, opacity;
+  object-fit: cover;
+  object-position: 50% 75%;
+  perspective: 2000px;
+  perspective-origin: left bottom;
+  contain: paint layout size;
+  font-variant-caps: all-small-caps;
+  text-shadow:
+    3px 3px 0px crimson,
+    -3px -3px 0px lime,
+    0px 0px 6px cyan;
+  clip: rect(10px, 150px, 80px, 20px);
+  float: inline-end;
+  float-offset: 25px 50px;
+  touch-action: pinch-zoom rotate;
+  filter: contrast(120%) saturate(200%) invert(50%) sepia(80%);
+  outline-offset: 20px;
+  border-image-source: repeating-conic-gradient(
+    red,
+    orange 10deg,
+    yellow 20deg
+  );
+  border-image-slice: 15;
+  text-decoration-thickness: 8px;
+  text-decoration-style: wavy;
+  accent-color: hotpink;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Oh you wanted the image? These are the styles... the image is in the js */
+
+#mayDrive div30 {
+  color: cyan;
+}
+#mayDrive div31 {
+  background-color: yellow;
+  border-radius: 25%;
+}
+#mayDrive div32 {
+  transform: rotate(-25deg) scale(0.9);
+}
+#mayDrive div33 {
+  text-shadow:
+    3px 3px 0 red,
+    -3px -3px 0 lime;
+}
+#mayDrive div34 {
+  filter: saturate(250%) contrast(120%);
+}
+#mayDrive div35 {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+}
+#mayDrive div36 {
+  float: inline-end;
+  float-offset: 10px 30px;
+}
+#mayDrive div37 {
+  isolation: isolate;
+  mix-blend-mode: lighten;
+}
+#mayDrive div38 {
+  scroll-snap-align: start;
+  scroll-padding: 20px;
+}
+#mayDrive div39 {
+  mask-image: radial-gradient(circle, black 40%, transparent 41%);
+}
+#mayDrive div40 {
+  backdrop-filter: blur(3px) hue-rotate(90deg);
+}
+#mayDrive div41 {
+  font-variant-caps: small-caps;
+  text-decoration-thickness: 4px;
+}
+#mayDrive div42 {
+  object-fit: contain;
+  object-position: 30% 70%;
+}
+#mayDrive div43 {
+  border-image-source: repeating-linear-gradient(to right, red, orange 10px);
+  border-image-slice: 20;
+}
+#mayDrive div44 {
+  transform: translateX(40px) rotateY(60deg);
+  perspective: 800px;
+}
+#mayDrive div45 {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+#mayDrive div46 {
+  accent-color: lime;
+}
+#mayDrive div47 {
+  background-image: conic-gradient(pink, purple, cyan);
+}
+#mayDrive div48 {
+  text-decoration-style: dotted;
+  text-decoration-color: magenta;
+}
+#mayDrive div49 {
+  clip: rect(5px, 100px, 50px, 0);
+}
+#mayDrive div50 {
+  filter: invert(50%) sepia(70%) contrast(150%) brightness(120%);
+}
