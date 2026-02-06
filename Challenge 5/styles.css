@@ -1,0 +1,150 @@
+:root {
+  --glow: #ffffff;
+  --bg: #050505;
+  --soft: rgba(255,255,255,0.4);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #050505;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro.animate {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: floatFade 4s ease forwards;
+}
+
+@keyframes floatFade {
+    0% { opacity: 0; transform: translateY(100px); }
+    40% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100px); }
+}
+
+#codeInput {
+    width: 90%;
+    max-width: 900px;
+    padding: 16px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 14px;
+    background: transparent;
+    color: white;
+    outline: none;
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+#codeInput:focus {
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+#codeInput.reveal {
+    animation: shimmerIn 1s ease forwards;
+}
+
+@keyframes shimmerIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+#intro.challenge {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2.8rem;
+    color: #ffffff;
+    background: #111;
+    padding: 30px 50px;
+    border-radius: 14px;
+    border: 1px solid #333;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    user-select: none;
+    cursor: default;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.4);
+    white-space: pre-wrap;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#intro.challenge.exit {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+#intro.final {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: finalFloat 3s ease forwards;
+}
+
+@keyframes finalFloat {
+    0% { opacity: 0; transform: translateY(60px); }
+    60%, 100% { opacity: 1; transform: translateY(0); }
+}
+
+.input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#submit {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: 1s ease;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+#submit.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#intro {
+    min-height: 3rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+#codeInput.shake {
+  animation: shake 0.35s ease;
+}
+
+body.access {
+    justify-content: center;
+}
+
+.access #intro {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.access .input-wrap {
+    transform: scale(1.2);
+}
