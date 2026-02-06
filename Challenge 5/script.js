@@ -109,7 +109,7 @@ submit.addEventListener("click", async () => {
         } else {
           document.body.classList.add("access")
           intro.textContent = "ACCESS CODE"
-          input.placeholder = "Enter access code..."
+          input.placeholder = "Enter access code... Hint: Its an anagram"
         }
       }, 700)
     } else {
