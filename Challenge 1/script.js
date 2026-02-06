@@ -1,5 +1,5 @@
 async function check() {
-  const answer = document.getElementById("lineInput").value;
+  const answer = document.getElementById("numInput").value;
 
   const response = await fetch("/.netlify/functions/checkAnswer", {
     method: "POST",
