@@ -1,20 +1,19 @@
-export async function handler(event, context) {
-  const { answer } = JSON.parse(event.body);
-  if (answer.trim() === "43") {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        url: "https://sweet-granita-2d58fb.netlify.app",
-      }),
-    };
+async function check() {
+  const answer = document.getElementById("numInput").value;
+
+  const response = await fetch("/.netlify/functions/checkAnswer", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ answer }),
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    window.location.href = result.url;
   } else {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: false,
-        message: "Incorrect line number.",
-      }),
-    };
+    alert(result.message);
   }
 }
