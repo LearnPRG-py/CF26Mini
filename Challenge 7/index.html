@@ -6,6 +6,12 @@
     <title>Challenge 7</title>
   </head>
   <body>
+    Note array looks like this:
+    [
+      0, 1, 2
+      3, 4, 5
+      6, 7, 8
+    ]
     <pre>
 1   def rotate_clockwise(arr):
 2       if len(arr) != 9:
@@ -18,13 +24,13 @@
 9       arr[2] = top_left
 10      arr[8] = top_right
 11      arr[6] = bottom_right
-12      top = arr[3]
+12      top = arr[1]
 13      right = arr[5]
 14      bottom = arr[7]
-15      left = arr[1]
-16      arr[1] = left
+15      left = arr[3]
+16      arr[7] = left
 17      arr[5] = top
-18      arr[7] = right
+18      arr[1] = right
 19      arr[3] = bottom
 20      return arr
 </pre>
