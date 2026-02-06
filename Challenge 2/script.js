@@ -25,7 +25,7 @@ async function submitValue() {
       status.textContent = "Correct!";
       congrats.style.display = "block";
       nextBtn.style.display = "inline-block";
-      window._nextURL = data.next;
+      window.location.href = "https://dainty-taffy-0308e5.netlify.app/";
       return;
     }
 
