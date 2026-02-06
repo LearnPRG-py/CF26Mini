@@ -3,6 +3,9 @@ async function check() {
 
   const response = await fetch("/.netlify/functions/checkAnswer", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({ answer }),
   });
 
